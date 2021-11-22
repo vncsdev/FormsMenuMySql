@@ -15,7 +15,7 @@ namespace _23_09_2021
     {
         MySqlConnection conexao;
         MySqlCommand comando;
-        String banco = "server=localhost;port=3308;uid=root;pwd=etecjau;database=ds";
+        String banco = "server=localhost;port=3306;uid=root;pwd=etecjau;database=ds";
         MySqlDataAdapter Adaptador;
         DataTable datTabela;
 

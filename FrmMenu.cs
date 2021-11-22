@@ -14,7 +14,7 @@ namespace _23_09_2021
 {
     public partial class frmMenu : Form
     {
-        MySqlConnection conexao = new MySqlConnection("server=localhost;port=3308;uid=root;pwd=etecjau");
+        MySqlConnection conexao = new MySqlConnection("server=localhost;port=3306;uid=root;pwd=etecjau");
         MySqlCommand comando;
 
         public frmMenu()
