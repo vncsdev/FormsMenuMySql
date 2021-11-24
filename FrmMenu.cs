@@ -101,6 +101,21 @@ namespace _23_09_2021
                                            "video varchar(100))", conexao);
                 comando.ExecuteNonQuery();
 
+                comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS venda_cab " +
+                                           "(id integer not null auto_increment primary key, " +
+                                           "id_cliente int, " +
+                                           "data date, " +
+                                           "total decimal(10,2))", conexao);
+                comando.ExecuteNonQuery();
+
+                comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS venda_det " +
+                                           "(id integer not null auto_increment primary key, " +
+                                           "id_venda int, " +
+                                           "id_produto int, " +
+                                           "qtde decimal(10,3), " +
+                                           "vlr_unit decimal(10,2))", conexao);
+                comando.ExecuteNonQuery();
+
                 conexao.Close();
             }
             catch (Exception ex)
@@ -225,6 +240,12 @@ namespace _23_09_2021
         private void finalizarOSistemaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void vendasToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmVendas form = new frmVendas();
+            form.Show();
         }
     }
 }
