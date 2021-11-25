@@ -45,6 +45,7 @@ namespace _23_09_2021
             //    MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //    conexao.Close();
             //}
+            btnConsultar.PerformClick();
         }
 
         private void btnInserir_Click(object sender, EventArgs e)

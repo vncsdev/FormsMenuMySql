@@ -64,7 +64,7 @@ namespace _23_09_2021
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            //dgvProdutos.RowCount = 0;
+            dgvProdutos.RowCount = 0;
             cboCliente.SelectedIndex = -1;
             cboProdutos.SelectedIndex = -1;
             txtEndereco.Clear();
@@ -171,8 +171,8 @@ namespace _23_09_2021
             {
                 conexao = new MySqlConnection(banco);
                 conexao.Open();
-                comando = new MySqlCommand("insert into venda_cab (id_cliente, data, total)" +
-                                           " values (@id_cliente, @data, @total)", conexao);
+                comando = new MySqlCommand("insert into venda_cab (id_cliente, data, total) " +
+                                           "values (@id_cliente, @data, @total)", conexao);
                 comando.Parameters.AddWithValue("@id_cliente", cboCliente.SelectedValue);
                 comando.Parameters.AddWithValue("@data", DateTime.Now);
                 comando.Parameters.AddWithValue("@total", total);
@@ -184,7 +184,7 @@ namespace _23_09_2021
                 foreach (DataGridViewRow linha in dgvProdutos.Rows)
                 {
                     //gravando o detalhe na venda
-                    comando = new MySqlCommand("insert into venda_cab (id_venda, id_produto, qtde, vlr_unit)" +
+                    comando = new MySqlCommand("insert into venda_det (id_venda, id_produto, qtde, vlr_unit)" +
                                                " values (@id_venda, @id_produto, @qtde, @vlr_unit)", conexao);
                     comando.Parameters.AddWithValue("@id_venda", IDvenda);
                     comando.Parameters.AddWithValue("@id_produto", linha.Cells[0].Value);
